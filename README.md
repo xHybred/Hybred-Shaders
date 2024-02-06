@@ -10,4 +10,4 @@
 
 If you need help, join the [Motion Clarity discord](https://discord.gg/JcKNMmDdpT) or the [r/MotionClarity subreddit](https://www.reddit.com/r/MotionClarity/)
 
-Sources/Credits: [ShaderToy Stochastic anti-aliasing](https://www.shadertoy.com/view/mtXcDN) & [Github Gaussian anti-aliasing](https://github.com/bburrough/GaussianAntialiasing) for the concept. Credit to [Vortigern](https://github.com/vortigern11)'s TAA shader (the jitter & sampling algorithm) which this is built/based off of.
+Sources/Credits: [ShaderToy Stochastic anti-aliasing](https://www.shadertoy.com/view/mtXcDN) & [Github Gaussian anti-aliasing](https://github.com/bburrough/GaussianAntialiasing) for the concept.
