@@ -28,7 +28,7 @@ void PS_Main(in VSOUT i, out float4 o : SV_Target0)
     o = tex2D(sColorTex, i.uv);
 }
 
-technique GaussianAA
+technique Stochastic Anti-Aliasing
 {
     pass { VertexShader = PostProcessVS; PixelShader = PS_Main; }
 }
