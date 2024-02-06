@@ -10,7 +10,7 @@ uniform float JitterAmount < \
     ui_label = "Jitter Amount"; \
     ui_min = 0.0; \
     ui_max = 2.0; \
-    ui_step = 0.001; \
+    ui_step = 0.005; \
     ui_type = "slider"; \
 > = 0.5;
 
@@ -19,12 +19,14 @@ sampler2D sColorTex { Texture = ColorTex; };
 
 // https://www.shadertoy.com/view/ltB3zD
 float GetGoldNoise(float2 vpos, float seed){
-    return frac(tan(distance(vpos * PHI, vpos) * seed) * vpos.x);
+    float n = frac(tan(distance(vpos * PHI, vpos) * seed) * vpos.x);
+	n = isnan(n) ? 0.0 : n;
+	return n;
 }
 
 void PS_Main(in VSOUT i, out float4 o : SV_Target0)
 {
-    i.uv += (GetGoldNoise(i.vpos.xy, frame_count % 8 + 1) * 2.0 - 1.0) * BUFFER_PIXEL_SIZE * JitterAmount;
+    i.uv += (GetGoldNoise(i.vpos.xy, frame_count % 16 + 1) * 2.0 - 1.0) * BUFFER_PIXEL_SIZE * JitterAmount;
     o = tex2D(sColorTex, i.uv);
 }
 
