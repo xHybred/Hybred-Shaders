@@ -8,9 +8,9 @@
 
 **Info**
 
-- Default value is 0.35, higher values increase anti-aliasing levels but increases noise, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been.
+- Default value is 0.35, higher values increase anti-aliasing but also makes the noise more visible, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been.
 
-- This shader is **very** lightweight, its even lighter than FXAA.
+- This shader is **very** lightweight, its even lighter than FXAA is so it should cost you nothing to run.
 
 If you need help, join the [Motion Clarity discord](https://discord.gg/JcKNMmDdpT) or the [r/MotionClarity subreddit](https://www.reddit.com/r/MotionClarity/)
 
