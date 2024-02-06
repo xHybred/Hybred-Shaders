@@ -4,7 +4,7 @@
 
 - For single player games use [REST addon](https://github.com/4lex4nder/ReshadeEffectShaderToggler/releases) in order to ignore the UI of the game.
 
-- Recommended to pair this with an post-process AA like [SMAA](https://github.com/martymcmodding/iMMERSE) or [CMAA2](https://gist.github.com/martymcmodding/aee91b22570eb921f12d87173cacda03) (both by MartyMCModding). Make sure other AA methods go before (above) this shader.
+- Recommended to pair this with a post-process AA like [SMAA](https://github.com/martymcmodding/iMMERSE) or [CMAA2](https://gist.github.com/martymcmodding/aee91b22570eb921f12d87173cacda03) (both by MartyMCModding). Make sure other AA methods go before (above) this shader.
 
 - Default value is 0.5, higher values increase anti-aliasing levels but increases jittering, lower values decrease anti-aliasing but reduce jittering
 
