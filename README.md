@@ -1,5 +1,7 @@
 # Hybred Shaders - ReShade anti-aliasing
 
+**Recommendations**
+
 I recommend for single player games that you use [REST addon](https://github.com/4lex4nder/ReshadeEffectShaderToggler/releases) \
 in order to ignore the UI of the game.
 
