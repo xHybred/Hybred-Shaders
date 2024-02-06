@@ -12,7 +12,7 @@ uniform float JitterAmount < \
     ui_max = 2.0; \
     ui_step = 0.001; \
     ui_type = "slider"; \
-> = 1.0;
+> = 0.5;
 
 texture2D ColorTex : COLOR;
 sampler2D sColorTex { Texture = ColorTex; };
