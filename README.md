@@ -2,8 +2,7 @@
 
 **Recommendations**
 
-- For single player games use [REST addon](https://github.com/4lex4nder/ReshadeEffectShaderToggler/releases) \
-in order to ignore the UI of the game.
+- For single player games use [REST addon](https://github.com/4lex4nder/ReshadeEffectShaderToggler/releases) in order to ignore the UI of the game.
 
 - Recommended to pair this with an post-process AA like [SMAA from MartyMCModding](https://github.com/martymcmodding/iMMERSE) or [CMAA2 also from MartyMCModding](https://gist.github.com/martymcmodding/aee91b22570eb921f12d87173cacda03). \
 Make sure other AA methods go before (above) this shader.
