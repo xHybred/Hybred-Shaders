@@ -17,9 +17,15 @@
 This form of AA works by randomly sampling the geometry within a pixel rather than sampling the geometry at the pixel center. The idea is brought over from ray-tracing where the color of a pixel is determined by randomly sampling geometry within each pixel. It achieves perceptual smoothing of rendered images with zero impact to rendering performance.
 
 
-**Science**
+**Why It Works**
 
-Due to persistence of vision successive frames appear blended. As a result the user just sees a smooth image free of jaggies, whereas temporal anti-aliasing adds additional processing steps by jittering and blending a sequence of frames, this anti-aliasing achieves a smooth image with zero impact to performance & no temporal motion issues
+Due to persistence of vision successive frames appear blended. As a result the user just sees a smooth image free of jaggies, whereas temporal anti-aliasing adds additional processing steps by jittering and blending a sequence of frames, this anti-aliasing achieves a smooth image with zero impact to performance & no temporal motion issues.
+
+**ReShade Limitations**
+
+ReShade has no access to the view matrix, as a result it can't combat specular aliasing or pixel crawl well, a game added version is much more efficient as a result, similar to ReShade TAA it is hampered a bit.
+
+All AA shaders are technologically hampered to some degree due to rendering after UI and post-processunf or lacking game data, but some shaders it's more important than others.
 
 **Resources**
 
