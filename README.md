@@ -25,7 +25,7 @@ Due to persistence of vision successive frames appear blended. As a result the 
 
 - ReShade has no access to the view matrix, as a result it can't combat specular aliasing or pixel crawl, a game added version is much more efficient as a result
 
-- ReShade can only sample against a 2d image of the game, not against the actual geometry
+- ReShade can only sample against a 2d image of the game, not against the actual geometry like this technique is suppose to do
 
 - This one isn't a ReShade limitation but currently the shader does not do edge detection, this is something that can improve in future iterations
 
