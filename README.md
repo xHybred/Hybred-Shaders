@@ -12,6 +12,17 @@
 
 - This shader is **very** lightweight, its even lighter than FXAA is so it should cost you nothing to run.
 
+**How It Works**
+
+This form of AA works by randomly sampling the geometry within a pixel rather than sampling the geometry at the pixel center
+
+
+**Science**
+
+Due to persistence of vision successive frames appear blended. As a result the user just sees a smooth image free of jaggies, whereas temporal anti-aliasing adds additional processing steps by jittering and blending a sequence of frames, this anti-aliasing achieves a smoother image with zero impact to performance & no temporal motion issues
+
+**Resources**
+
 If you need help, join the [Motion Clarity discord](https://discord.gg/JcKNMmDdpT) or the [r/MotionClarity subreddit](https://www.reddit.com/r/MotionClarity/)
 
 Credits: All code in this shader is original however the inspiration for the shader was from [ShaderToy Stochastic anti-aliasing](https://www.shadertoy.com/view/mtXcDN) & [Github Gaussian anti-aliasing](https://github.com/bburrough/GaussianAntialiasing), along with [ShaderToy Gold Noise Uniform Random Static](https://www.shadertoy.com/view/ltB3zD)
