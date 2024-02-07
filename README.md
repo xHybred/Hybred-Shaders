@@ -1,4 +1,4 @@
-# Hybred Shaders - ReShade anti-aliasing
+# Hybred Shaders
 
 **Recommendations**
 
@@ -23,9 +23,11 @@ Due to persistence of vision successive frames appear blended. As a result the 
 
 **ReShade Limitations**
 
-ReShade has no access to the view matrix, as a result it can't combat specular aliasing or pixel crawl well, a game added version is much more efficient as a result, similar to ReShade TAA it is hampered a bit.
+- ReShade has no access to the view matrix, as a result it can't combat specular aliasing or pixel crawl, a game added version is much more efficient as a result
 
-All AA shaders are technologically hampered to some degree due to rendering after UI and post-processunf or lacking game data, but some shaders it's more important than others.
+- ReShade can only sample against a 2d image of the game, not against the actual geometry
+
+- This one isn't a ReShade limitation but currently the shader does not do edge detection, this is something that can improve in future iterations
 
 **Resources**
 
