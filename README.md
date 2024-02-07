@@ -14,12 +14,12 @@
 
 **How It Works**
 
-This form of AA works by randomly sampling the geometry within a pixel rather than sampling the geometry at the pixel center
+This form of AA works by randomly sampling the geometry within a pixel rather than sampling the geometry at the pixel center. The idea is brought over from ray-tracing where the color of a pixel is determined by randomly sampling geometry within each pixel. It achieves perceptual smoothing of rendered images with zero impact to rendering performance.
 
 
 **Science**
 
-Due to persistence of vision successive frames appear blended. As a result the user just sees a smooth image free of jaggies, whereas temporal anti-aliasing adds additional processing steps by jittering and blending a sequence of frames, this anti-aliasing achieves a smoother image with zero impact to performance & no temporal motion issues
+Due to persistence of vision successive frames appear blended. As a result the user just sees a smooth image free of jaggies, whereas temporal anti-aliasing adds additional processing steps by jittering and blending a sequence of frames, this anti-aliasing achieves a smooth image with zero impact to performance & no temporal motion issues
 
 **Resources**
 
