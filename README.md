@@ -27,7 +27,7 @@ Due to persistence of vision successive frames appear blended. As a result the 
 
 - ReShade can only sample against a 2d image of the game, not against the actual geometry like this technique is suppose to do
 
-- This one isn't a ReShade limitation but currently 〰〰the shader does not do edge detection, this is something that can improve in future iterations〰〰 - added Luminance edge detection, although color or depth based would've been better so will revamp in the future
+- This one isn't a ReShade limitation but currently ~~the shader does not do edge detection, this is something that can improve in future iterations~~ - added Luminance edge detection, although color or depth based would've been better so I will revamp in the future
 
 **Resources**
 
