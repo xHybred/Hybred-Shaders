@@ -10,7 +10,7 @@ uniform float JitterAmount < \
     ui_label = "Jitter Amount"; \
     ui_min = 0.0; \
     ui_max = 2.0; \
-    ui_step = 0.005; \
+    ui_step = 0.01; \
     ui_type = "slider"; \
     ui_tooltip = "How much the noise moves, which is what causes the AA effect"; \
 > = 0.35;
@@ -19,10 +19,19 @@ uniform float NoiseMultiplier < \
     ui_label = "Noise Amount"; \
     ui_min = 1.0; \
     ui_max = 25.0; \
-    ui_step = 0.5; \
+    ui_step = 1.0; \
     ui_type = "slider"; \
     ui_tooltip = "How strong the noise is"; \
 > = 15.0;
+
+uniform float BlurAmount < \
+    ui_label = "Blur Amount"; \
+    ui_min = 0.0; \
+    ui_max = 0.45; \
+    ui_step = 0.05; \
+    ui_type = "slider"; \
+    ui_tooltip = "How much blurring occurs"; \
+> = 0.25;
 
 uniform float LuminanceThreshold < \
     ui_label = "Luma Edge Threshold"; \
@@ -50,7 +59,18 @@ void PS_Main(in VSOUT i, out float4 o : SV_Target0)
     float edge = saturate((lum - threshold) * NoiseMultiplier);
 
     i.uv += (GetGoldNoise(i.vpos.xy, frame_count % 16 + 1) * 2.0 - 1.0) * BUFFER_PIXEL_SIZE * JitterAmount * edge;
-    o = tex2D(sColorTex, i.uv);
+
+    // Apply blur
+    float blur = BlurAmount;
+    float2 blurDir = float2(blur, 0.0) * BUFFER_PIXEL_SIZE;
+    float4 blurredSample = 0.25 * (
+        tex2D(sColorTex, i.uv - blurDir) +
+        tex2D(sColorTex, i.uv + blurDir) +
+        tex2D(sColorTex, i.uv - 2.0 * blurDir) +
+        tex2D(sColorTex, i.uv + 2.0 * blurDir)
+    );
+    
+    o = lerp(tex2D(sColorTex, i.uv), blurredSample, blur * edge);
 }
 
 technique ASAA
