@@ -53,7 +53,7 @@ void PS_Main(in VSOUT i, out float4 o : SV_Target0)
     o = tex2D(sColorTex, i.uv);
 }
 
-technique StochasticAA
+technique ASAA
 {
     pass { VertexShader = PostProcessVS; PixelShader = PS_Main; }
 }
