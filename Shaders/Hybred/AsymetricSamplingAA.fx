@@ -7,7 +7,7 @@ uniform uint frame_count < source = "framecount"; >;
 struct VSOUT { float4 vpos : SV_POSITION; float2 uv : TEXCOORD0; };
 
 uniform float JitterAmount < \
-    ui_label = "Jitter Amount"; \
+    ui_label = "Noise Jitter Amount"; \
     ui_min = 0.0; \
     ui_max = 1.0; \
     ui_step = 0.05; \
@@ -16,35 +16,31 @@ uniform float JitterAmount < \
 > = 0.45;
 
 uniform float BlurAmount < \
-    ui_label = "Blur Amount"; \
+    ui_label = "Edge Blur Amount"; \
     ui_min = 0.0; \
     ui_max = 1.0; \
     ui_step = 0.05; \
     ui_type = "slider"; \
-    ui_tooltip = "How much blurring occurs"; \
-> = 0.5;
+    ui_tooltip = "How much blurring occurs on whatever is considered an edge"; \
+> = 0.40;
 
 uniform float EdgeThreshold < \
-    ui_label = "Luma Edge Threshold"; \
+    ui_label = "Bright Edge Detect"; \
     ui_min = 0.0; \
     ui_max = 0.5; \
     ui_step = 0.005; \
     ui_type = "slider"; \
-    ui_tooltip = "Strength of edge detection, affects what the noise is applied to"; \
+    ui_tooltip = "Strength of edge detection in bright spots, higher values reduces what the AA is applied to"; \
 > = 0.25;
 
 uniform float ContrastPredicationRange < \
-    ui_label = "Contrast predication range"; \
+    ui_label = "Dark Edge Detect"; \
     ui_min = 0.0; \
     ui_max = 1.0; \
     ui_step = 0.05; \
     ui_type = "slider"; \
     ui_tooltip = 
-        "The maximum amount by which the threshold is lowered in dark spots.\n"
-        "Helps to detect edges in dark spots.\n"
-        "\n"
-        "Raising both this value and the edgethreshold helps to prevent false\n"
-        "postives in bright spots and false negatives in dark spots."; \
+        "Strength of edge detection in dark spots, higher values reduces what the AA is applied to"; \
 > = 0.8;
 
 uniform bool EdgeDebug <
