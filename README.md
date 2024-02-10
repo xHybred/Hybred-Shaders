@@ -8,9 +8,9 @@
 
 **Info**
 
-- Default value is 0.35, higher values increase anti-aliasing but also makes the noise more visible, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been.
+- Default value is 0.5, higher values increase anti-aliasing but also makes the noise more visible, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been.
 
-- This shader is **very** lightweight, its even lighter than FXAA is so it should cost you nothing to run.
+- This shader is the lightest AA shader ReShade supports.
 
 **How It Works**
 
@@ -26,7 +26,7 @@ Due to persistence of vision successive frames appear blended. As a result the 
 
 - ReShade can only sample against a 2d image of the game, not against the actual geometry like this technique is suppose to do
 
-- ~~This one isn't a ReShade limitation but currently the shader does not do edge detection, this is something that can improve in future iterations~~ - added Luminance edge detection, although color or depth based would've been better so I will revamp in the future
+- The real version of this is suppose to break mipmap level decisions. UV decisions are calculated the normal way in the vertex interpolator. Offsets should be applied in the pixel shader and texturer sampler needs derivative mipmap level input with ddx/ddy values of unchanged UVs
 
 **Resources**
 
