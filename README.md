@@ -8,7 +8,7 @@
 
 **Info**
 
-- Default value is 0.5, higher values increase anti-aliasing but also makes the noise more visible, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been.
+- Default value is 0.45, higher values increase anti-aliasing but also makes the noise more visible, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been.
 
 - This shader is the lightest AA shader ReShade supports.
 
