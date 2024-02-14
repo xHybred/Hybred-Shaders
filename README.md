@@ -12,6 +12,12 @@
 
 - This shader is the lightest AA shader ReShade supports.
 
+**What Are It's Advantages & Disadvantages Over Other ReShade Anti-Aliasing?**
+
+**Cons:** Doesn't do as much on simple geomtric edges.
+
+**Pros:** Reduces spurious pixels/aliasing on complex shapes (whcih other post-process AA's can't/don't do well)
+
 **How It Works**
 
 This form of AA works by randomly sampling the ~~geometry~~ framebuffer within a pixel rather than sampling the ~~geometry~~ framebuffer at the pixel center. The idea is brought over from ray-tracing where the color of a pixel is determined by randomly sampling geometry within each pixel. It achieves perceptual smoothing of rendered images with zero impact to rendering performance.
