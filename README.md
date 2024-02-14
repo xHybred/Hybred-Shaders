@@ -10,23 +10,23 @@
 
 - This shader is the lightest AA shader ReShade supports.
 
+### ReShade Limitations
+
+- ReShade has no access to the view matrix, as a result it can't combat specular aliasing or pixel crawl, a game added version is much more efficient as a result.
+
+- ReShade can only sample against a 2d image of the game, not against the actual geometry like this technique is suppose to do.
+
+- The real version of this is suppose to break mipmap level decisions. UV decisions are calculated the normal way in the vertex interpolator. Offsets should be applied in the pixel shader and texturer sampler needs derivative mipmap level input with ddx/ddy values of unchanged UVs.
+
 ### What Are The Advantages & Disadvantages Over Others
 
 **Cons:** Doesn't do as much on simple geomtric edges.
 
-**Pros:** Reduces spurious pixels/aliasing on complex shapes (whcih other post-process AA's can't/don't do well)
+**Pros:** Reduces spurious pixels/aliasing on complex shapes (whcih other post-process AA's can't/don't do well).
 
 ### How & Why It Works
 
 This form of AA works by randomly sampling the ~~geometry~~ framebuffer within a pixel rather than sampling the ~~geometry~~ framebuffer at the pixel center. Due to persistence of vision successive frames appear blended. As a result the user just sees a smooth image with less jaggies, whereas temporal anti-aliasing adds additional processing steps by jittering and blending a sequence of frames, this anti-aliasing achieves a smooth image with zero impact to performance & no temporal motion issues.
-
-### ReShade Limitations
-
-- ReShade has no access to the view matrix, as a result it can't combat specular aliasing or pixel crawl, a game added version is much more efficient as a result
-
-- ReShade can only sample against a 2d image of the game, not against the actual geometry like this technique is suppose to do
-
-- The real version of this is suppose to break mipmap level decisions. UV decisions are calculated the normal way in the vertex interpolator. Offsets should be applied in the pixel shader and texturer sampler needs derivative mipmap level input with ddx/ddy values of unchanged UVs
 
 ### Resources
 
