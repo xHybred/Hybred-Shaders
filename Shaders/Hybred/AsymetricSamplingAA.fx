@@ -1,9 +1,9 @@
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Asymetric Sampling Anti-Aliasing v1.0 by Hybred
 // Randomly samples the framebuffer within a pixel rather than sampling the framebuffer at the pixel center. Due to persistence of vision successive frames appear blended.
 // This is more effective the higher your FPS is. 120fps+ recommended
 // GitHub: https://github.com/xHybred/Hybred-Shaders/tree/main/Shaders
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #include "ReShade.fxh"
 
@@ -13,9 +13,9 @@ uniform uint frame_count < source = "framecount"; >;
 
 struct VSOUT { float4 vpos : SV_POSITION; float2 uv : TEXCOORD0; };
 
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // UI CONTROLS
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 uniform float JitterAmount < \
     ui_label = "Noise Jitter Amount"; \
@@ -58,9 +58,9 @@ uniform bool EdgeDebug <
     ui_type = "radio";
 > = false;
 
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // SHADER
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #define BUFFER_INFO float2(BUFFER_RCP_WIDTH, BUFFER_RCP_HEIGHT)
 #define LUMA_WEIGHTS float3(2.0, 6.0, 1.0)
@@ -145,9 +145,9 @@ void PS_Main(in VSOUT i, out float3 o : SV_Target0, in float4 offset[2] : TEXCOO
     o = blurredSample;
 }
 
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TECHNIQUE
-///////////////////////////////////////////////////////
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 technique ASAA
 {
