@@ -18,7 +18,7 @@ This form of AA works by randomly sampling the ~~geometry~~ framebuffer within a
 
 **Cons:** Doesn't do as much on simple geomtric edges.
 
-**Pros:** Reduces spurious pixels/aliasing on complex shapes (whcih other post-process AA's can't/don't do well).
+**Pros:** Reduces spurious pixels/aliasing on complex shapes (which other post-process AA's can't/don't do well).
 
 # Edge Sharpen
 
