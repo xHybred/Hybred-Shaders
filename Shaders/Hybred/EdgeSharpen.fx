@@ -1,14 +1,14 @@
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Edge Sharpening by Hybred
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Edge Sharpening v1.0 by Hybred
 // Sharpens edges to reduce edge specific blur, or can also be used to simulate the appearance of disabled anti-aliasing by enhancing jagged edges
 // GitHub: https://github.com/xHybred/Hybred-Shaders/tree/main/Shaders
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #include "ReShade.fxh"
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // UI CONTROLS
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 uniform float EdgeThreshold <
     ui_type = "slider";
@@ -51,9 +51,9 @@ uniform bool ShowEdges <
     ui_tooltip = "Shows detected edges in white for debugging purposes.";
 > = false;
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // FUNCTIONS
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Convert RGB to luminance for edge detection
 float GetLuminance(float3 color)
@@ -128,9 +128,9 @@ float3 EnhanceEdgeContrast(float3 originalColor, float edgeStrength, float2 texc
     return enhancedColor;
 }
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // PIXEL SHADER
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 float3 AntiAliasingDisablerPS(float4 pos : SV_Position, float2 texcoord : TEXCOORD) : SV_Target
 {
@@ -164,9 +164,9 @@ float3 AntiAliasingDisablerPS(float4 pos : SV_Position, float2 texcoord : TEXCOO
     return pixelatedColor;
 }
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TECHNIQUE
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 technique EdgeSharpening
 {
@@ -175,4 +175,5 @@ technique EdgeSharpening
         VertexShader = PostProcessVS;
         PixelShader = AntiAliasingDisablerPS;
     }
+
 }
