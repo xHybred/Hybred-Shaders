@@ -24,13 +24,13 @@ This form of AA works by randomly sampling the ~~geometry~~ framebuffer within a
 
 ### Edge Sharpen Explanation
 
-This shader is a sharpening algorithm that only sharpens edges (compared to other shaders that do the inverse) incase you need outlines or edges to pop more. It also has a pixelation effect that applies to edges to simulate how "aliasing" looks via a shader, as if you're running the game with no anti-aliasing (if you want that). Both components of the shader can be ran independtly of each other or together.
+This shader sharpens only edges, unlike typical sharpening filters that do the inverse or sharpen everything. It's useful when you want outlines or edges to stand out more. It also includes an optional pixelation effect that mimics the look of aliasing, as if the game were running without anti-aliasing. Both the edge sharpening and pixelation features can be used separately or together.
 
 # Microcontrast Reducer
 
 ### Microcontrast Reducer Explanation
 
-This shader tones down microcontrast, which can help reduce textures looking unnaturally harsh due to artifcial clarity boosts via forced sharpening or detail amplification that occurs with ML based TAA's like DLSS 4.
+This shader reduces microcontrast, helping soften overly harsh textures that result from artificial clarity boosts *(forced sharpening)* or excessive detail enhancement that can occur with ML-based TAA methods like DLSS 4.
 
 ### Resources
 
