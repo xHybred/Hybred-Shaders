@@ -1,6 +1,6 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Asymetric Sampling Anti-Aliasing v1.0 by Hybred
-// Randomly samples the framebuffer within a pixel rather than sampling the framebuffer at the pixel center. Due to persistence of vision successive frames appear blended.
+// Off-center sampling meant to exploit persistence of vision to reduce aliasing
 // This is more effective the higher your FPS is. 120fps+ recommended
 // GitHub: https://github.com/xHybred/Hybred-Shaders/tree/main/Shaders
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++
