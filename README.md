@@ -23,7 +23,7 @@ Only SMAA-ACE needs external textures. The other shaders are self-contained `.fx
 
 SMAA-ACE is a hybrid implementation of Subpixel Morphological Anti-Aliasing. A pixel shader finds edges at full resolution, then a compute shader compacts the active edge pixels inside each workgroup and calculates blend weights only for those pixels. The final pass blends the result into the image. Skipping blend weight work for pixels that are not edges keeps the cost of the expensive pass proportional to how much of the screen is actually aliased.
 
-The compute path is available on D3D11, D3D12, OpenGL and Vulkan. On D3D9 and D3D10, where ReShade has no compute shader support, use the **SMAA-ACE (Pixel Fallback)** technique instead. The fallback produces the same result with the reference pixel-shader passes.
+The compute path is available on D3D11, D3D12, OpenGL and Vulkan. On D3D9 and D3D10, where ReShade has no compute shader support, use the **SMAA-ACE (Pixel Fallback)** technique instead. The fallback produces the same visual result with the reference pixel-shader passes. It is important to use the correct path for your API for the best performance.
 
 ### SMAA-ACE Recommendations & Info
 
