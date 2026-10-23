@@ -47,7 +47,7 @@ This form of AA works by randomly sampling the ~~geometry~~ framebuffer within a
 
 - For single player games use [REST addon](https://github.com/4lex4nder/ReshadeEffectShaderToggler/releases) in order to ignore the UI of the game.
 
-- Pair this with a post-process AA like [SMAA](https://github.com/martymcmodding/iMMERSE) or [CMAA2](https://gist.github.com/martymcmodding/aee91b22570eb921f12d87173cacda03) (both by MartyMCModding, his versions are more optimized). SMAA-ACE in this repository also works well for this. Make sure other AA methods go before (above) this shader. Optionally you can also add sharpening after all the shaders if you want, but the more shaders you put on the higher the overhead is.
+- Pair this with a post-process AA like SMAA-ACE or CMAA2. Make sure other AA methods go before this shader. Optionally you can also add sharpening after all the shaders if you want, but the more shaders you put on the higher the overhead is.
 
 - Default value is 0.45, higher values increase anti-aliasing but also makes the noise more visible, lower values decrease anti-aliasing but reduce noise. Too high and the noise on edges becomes more distracting than the aliasing would've been. The optimal value for you depends on your resolution & preference.
 
