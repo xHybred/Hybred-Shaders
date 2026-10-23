@@ -5,7 +5,7 @@ A small collection of ReShade effects focused on motion clarity, edge quality an
 | Shader | Purpose |
 | --- | --- |
 | [SMAA-ACE](Shaders/Hybred/SMAA-ACE.fx) | High quality morphological anti-aliasing with a compute blend pass |
-| [ASAA](Shaders/Hybred/AsymetricSamplingAA.fx) | Zero-latency stochastic anti-aliasing for complex edges |
+| [ASAA](Shaders/Hybred/AsymetricSamplingAA.fx) | Low-latency stochastic anti-aliasing for complex edges |
 | [Edge Sharpen](Shaders/Hybred/EdgeSharpen.fx) | Sharpens edges only, with an optional pixelation effect |
 | [Microcontrast Reducer](Shaders/Hybred/MicrocontrastReducer.fx) | Softens harsh microcontrast from forced sharpening or ML upscalers |
 
